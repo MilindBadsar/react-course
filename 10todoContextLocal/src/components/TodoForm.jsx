@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTodo } from "../context/TodoContext";
+import { useTodo } from "../contexts/TodoContext";
 
 function TodoForm() {
   const [todo, setTodo] = useState("");
@@ -14,18 +14,18 @@ function TodoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-6">
-      <div className="flex gap-2">
+    <form onSubmit={handleSubmit} className="mb-8">
+      <div className="flex gap-3">
         <input
           type="text"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
           placeholder="Add a new todo..."
-          className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 px-4 py-3 bg-gray-700 text-white placeholder-gray-400 border-2 border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
         >
           Add
         </button>
